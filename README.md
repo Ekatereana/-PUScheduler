@@ -30,7 +30,7 @@ scheduler.close();
 #### Executing process with the highest priority.
 
 ##### Output
-![The RR algorithm workflow](resources/RRobinEx.png "RRobin queue workflow example")
+![The RR algorithm workflow](resources/RR.png "RRobin queue workflow example")
 
 #### Stop and restart BATH process while INTERACTIVE process arrived.
 
@@ -43,4 +43,4 @@ scheduler.close();
 > refers to interval between adding requests to CPU.
 
 ##### Output
-![Stopping process with lower priority](resources/AWG(waiting time) Frequency.png "RRobin queue workflow example")
+![Stopping process with lower priority](resources/AWG.png "RRobin queue workflow example")

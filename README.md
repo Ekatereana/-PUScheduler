@@ -12,18 +12,27 @@ There are two types of CPU process
 ### Algorithm description
 ## DEMONSTRATION
 
-#### The allocation of the `int` sized block of memory with further initialization of it.
-##### Code
+##### Code example
 ```
+scheduler = new Scheduler();
+Thread thread = new Thread(scheduler);
+thread.start();
+scheduler.execute(new CPUProcess(CPUProcess.ProcessType.INTERACTIVE, 0.0, 220, "P1"));
+scheduler.execute(new CPUProcess(CPUProcess.ProcessType.BATCH, 1.0, 400, "P3"));
+Thread.sleep(50);
+scheduler.execute(new CPUProcess(CPUProcess.ProcessType.INTERACTIVE, 2.0, 20, "P2"));
+scheduler.execute(new CPUProcess(CPUProcess.ProcessType.BATCH, 3.0, 200, "P4"));
+Thread.sleep(250);
+scheduler.execute(new CPUProcess(CPUProcess.ProcessType.INTERACTIVE, 4.0, 20, "P5"));
+scheduler.close();
 ```
+
+#### Executing process with the highest priority.
+
 ##### Output
-![The allocation of the int variable](resources/RRobinEx.png | width=100 "RRobin queue workflow example")
-#### The reallocation of the previously created block of memory to size 10.
-##### Code
-```
-```
-##### Code
-```
-```
+![The RR algorithm workflow](resources/RRobinEx.png "RRobin queue workflow example")
+
+#### Stop and restart BATH process while INTERACTIVE process arrived.
+
 ##### Output
-![The deletion of the int variable](resources/MQS.png | width=100 "Stopping process with lower priority"
+![Stopping process with lower priority](resources/MQS.png "RRobin queue workflow example")

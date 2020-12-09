@@ -36,3 +36,11 @@ scheduler.close();
 
 ##### Output
 ![Stopping process with lower priority](resources/MQS.png "RRobin queue workflow example")
+
+#### Graphics
+
+> Graphic of AVG(waiting time) for CPU processes (max complete time 150millis). Frequency axis
+> refers to interval between adding requests to CPU.
+
+##### Output
+![Stopping process with lower priority](resources/AWG(waiting time) Frequency.png "RRobin queue workflow example")

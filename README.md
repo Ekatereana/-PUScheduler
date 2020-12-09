@@ -26,4 +26,4 @@ There are two types of CPU process
 ```
 ```
 ##### Output
-![The deletion of the int variable](resources/MQS.png "Stopping process with lower priority"
+![The deletion of the int variable](resources/MQS.png | width=100 "Stopping process with lower priority"

@@ -12,8 +12,9 @@ public class Scheduler implements Runnable {
     }
 
     public Scheduler() {
-        readyQueue.put(CPUProcess.ProcessType.INTERACTIVE.getPriority(), new LinkedList<>());
-        readyQueue.put(CPUProcess.ProcessType.BATCH.getPriority(), new LinkedList<>());
+        for (CPUProcess.ProcessType p : CPUProcess.ProcessType.values()) {
+            readyQueue.put(p.getPriority(), new LinkedList<>());
+        }
 
     }
 
@@ -63,6 +64,9 @@ public class Scheduler implements Runnable {
                 queue.addFirst(current);
                 break;
             }
+        }
+        if (queue.isEmpty()) {
+            highestP = highestP < 5 ? highestP + 1 : highestP;
         }
 
     }

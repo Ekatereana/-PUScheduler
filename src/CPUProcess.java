@@ -2,11 +2,11 @@ import java.util.HashMap;
 
 public class CPUProcess implements Comparable<CPUProcess> {
     private ProcessType processType;
-    private Double arriveTime;
+    private int arriveTime;
     private int completeTime;
     private String processId;
 
-    public CPUProcess(ProcessType processType, Double arriveTime, int completeTime, String processId) {
+    public CPUProcess(ProcessType processType, int arriveTime, int completeTime, String processId) {
         this.processType = processType;
         this.arriveTime = arriveTime;
         this.completeTime = completeTime;
@@ -63,7 +63,11 @@ public class CPUProcess implements Comparable<CPUProcess> {
 
     enum ProcessType {
         INTERACTIVE(0),
-        BATCH(1);
+        GUI(1),
+        SYSTEM(2),
+        PACKAGE(3),
+        BATCH(4),
+        REFRESH(5);
 
         private int priority;
 

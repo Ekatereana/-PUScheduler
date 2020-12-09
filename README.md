@@ -5,11 +5,16 @@ A test of implementing the basic work of MQS (Multiply Queue Scheduler) algorith
 According to MQS all CPU process can be divided into separate groups. Each them has unique priority in
 general process queue (0 - has the highest priority).
 
+
 There are two types of CPU process
 > INTERACTIVE -> priority = 0
 > BATCH -> priority = 1
 
 ### Algorithm description
+
+Multiply queue key concept refers to different strategies
+
+
 ## DEMONSTRATION
 
 ##### Code example
@@ -42,5 +47,19 @@ scheduler.close();
 > Graphic of AVG(waiting time) for CPU processes (max complete time 150millis). Frequency axis
 > refers to interval between adding requests to CPU.
 
+As we ca
+
 ##### Output
-![Stopping process with lower priority](resources/AWG.png "RRobin queue workflow example")
+![Stopping process with lower priority](resources/AWG.png "AWG")
+
+> Graphic of AVG(waiting time) for CPU processes (max complete time 150millis). Priority axis
+> refers to range of priority class.
+
+To simulate inner-commands system, 5 types of process were created. The interval between requests is 50 millis
+(1/3 MAX completing time)
+As we can see from picture below - the higher priority of CPU process the less AWG waiting time value
+for this types of process will be achieved.
+Max time was achieved for 5-th priority
+
+##### Output
+![Stopping process with lower priority](resources/PRIORITY.png "priority")

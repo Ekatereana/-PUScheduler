@@ -17,7 +17,7 @@ There are two types of CPU process
 ```
 ```
 ##### Output
-![The allocation of the int variable]( resources/RRobinEx.png | width=100  "RRobin queue workflow example")
+![The allocation of the int variable]( resources/RRobinEx.png "RRobin queue workflow example")
 #### The reallocation of the previously created block of memory to size 10.
 ##### Code
 ```

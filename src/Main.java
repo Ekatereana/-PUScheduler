@@ -24,6 +24,7 @@ public class Main {
         int name = 0;
         int minPriority = 5;
         int arriveTime = 0;
+        int sleepTime = 0;
         String process = "";
         while (name < 100) {
             process = "P" + name;
@@ -31,9 +32,12 @@ public class Main {
             scheduler.execute(new CPUProcess(CPUProcess.ProcessType.getByPriority((int) (Math.random() * (minPriority + 1))),
                     arriveTime, (int) (Math.random() * 151), process));
             if (isRandom) {
-                Thread.sleep(new Long((int)(Math.random()*interval)));
+                sleepTime = (int)(Math.random()*interval);
+                Thread.sleep(new Long(sleepTime));
+                arriveTime+= sleepTime;
             } else {
                 Thread.sleep(new Long(interval));
+                arriveTime+= interval;
             }
         }
         scheduler.close();
